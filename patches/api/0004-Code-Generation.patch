@@ -7,7 +7,7 @@ Currently includes generated key holder classes for types
 used in the Registry Modification API
 
 diff --git a/build.gradle.kts b/build.gradle.kts
-index 948bd84db9923ef43cf753b7b72bf4d0081ab43a..4ee1aed72727e911bff4ac91bcacfd8eee87ecfc 100644
+index ec1e51c4f21e1e9c1c6e7e10ac0a98fe8a38b505..b18c771bf08c99c22517f833d3a143c68d10e5c1 100644
 --- a/build.gradle.kts
 +++ b/build.gradle.kts
 @@ -1,6 +1,7 @@
@@ -23,16 +23,16 @@ index 948bd84db9923ef43cf753b7b72bf4d0081ab43a..4ee1aed72727e911bff4ac91bcacfd8e
  }
  
 +// Paper start
-+val generatedApiPath: java.nio.file.Path = rootProject.projectDir.toPath().resolve("paper-api-generator/generated")
++val generatedApiFolder: File = rootProject.file("paper-api-generator/generated")
 +idea {
 +    module {
-+        generatedSourceDirs.add(generatedApiPath.toFile())
++        generatedSourceDirs.add(generatedApiFolder)
 +    }
 +}
 +sourceSets {
 +    main {
 +        java {
-+            srcDir(generatedApiPath)
++            srcDir(generatedApiFolder)
 +        }
 +    }
 +}
